@@ -4,18 +4,21 @@
 
 ```
 sudo pacman -Sy --needed wget git binutils make gcc glibc fakeroot pkgconf rtl-sdr lighttpd bladerf
-
+```
+```
 sudo wget -O /etc/udev/rules.d/rtl-sdr.rules https://github.com/abcd567a/temp/raw/main/rtl-sdr.rules
-
+```
+```
 git clone https://github.com/abcd567a/archlinux-dump1090-fa.git   
-
-cd archlinux-dump1090-fa   
-
-makepkg -si   
-
 ```
 
-The cloned directory contains following three files
+`cd archlinux-dump1090-fa  ` </br>
+
+`makepkg -si   ` </br>
+
+</br>
+
+**The cloned directory contains following three files**
 
 - PKGBUILD
 - dump1090-fa.install

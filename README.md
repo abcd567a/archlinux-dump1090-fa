@@ -3,7 +3,7 @@
 ### dump1090-fa for Arch Linux & Arch Linux Arm
 
 ```
-sudo pacman -Sy --needed wget git binutils make gcc glibc fakeroot pkgconf rtl-sdr lighttpd  
+sudo pacman -Sy --needed wget git binutils make gcc glibc fakeroot pkgconf rtl-sdr lighttpd bladerf
 
 sudo wget -O /etc/udev/rules.d/rtl-sdr.rules https://github.com/abcd567a/temp/raw/main/rtl-sdr.rules
 

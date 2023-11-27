@@ -2,6 +2,20 @@
 
 ### dump1090-fa for Arch Linux & Arch Linux Arm
 
+
+## OPTION-1: Fully automated install
+
+Copy paste the script below in terminal and press Enter Key. The script will do everything for you, except that it will ask you provide password and your permission [yes/no] when installing packages of build tools and dependencies, and of course for installing piaware itself..
+
+```
+git clone https://github.com/abcd567a/archlinux-dump1090-fa && bash archlinux-dump1090-fa/build-dump1090-fa.sh
+
+```
+
+</br>
+
+## OPTION-2: Manual Method:
+
 ```
 sudo pacman -Sy --needed wget git binutils make gcc glibc fakeroot pkgconf rtl-sdr lighttpd bladerf
 ```

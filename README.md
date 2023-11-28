@@ -5,7 +5,7 @@
 
 ## OPTION-1: Fully automated install
 
-Copy paste the script below in terminal and press Enter Key. The script will do everything for you, except that it will ask you provide password and your permission [yes/no] when installing packages of build tools and dependencies, and of course for installing piaware itself..
+Copy paste the script below in terminal and press Enter Key. The script will do everything for you, except that it will ask you provide password and your permission [yes/no] when installing packages of build tools and dependencies, and of course for installing dump1090-fa itself..
 
 ```
 git clone https://github.com/abcd567a/archlinux-dump1090-fa && bash archlinux-dump1090-fa/build-dump1090-fa.sh

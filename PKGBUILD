@@ -2,6 +2,9 @@
 #Maintener: abcd567
 
 pkgname=dump1090-fa
+pkgdesc="Flightaware ADS-B 1090 MHz decoder"
+url="https://github.com/flightaware/dump1090"
+
 pkgver=latest
 pkgrel=1
 arch=('i686' 'i386' 'x86_64' 'amd64' 'armv6h' 'armv6l' 'armv7h' 'armv7l' 'armv8h' 'armv8l' 'aarch64' 'arm64')
@@ -28,7 +31,6 @@ pkgver() {
 
 build() {
   cd ${srcdir}/dump1090
-  #git reset --hard 455896e 
   git fetch --all
   git reset --hard origin/master
   make DUMP1090_VERSION=$(git describe --tags | sed 's/-.*//') 

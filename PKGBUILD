@@ -10,7 +10,7 @@ pkgrel=1
 arch=('i686' 'i386' 'x86_64' 'amd64' 'armv6h' 'armv6l' 'armv7h' 'armv7l' 'armv8h' 'armv8l' 'aarch64' 'arm64')
 license=('GPL')
 
-makedepends=('git')
+makedepends=('git' 'fakeroot' 'make' 'pkgconf' 'gcc')
 depends=('rtl-sdr' 'lighttpd' 'bladerf')
 conflicts=('dump1090' 
            'dump1090-mutability' 

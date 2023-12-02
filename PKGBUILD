@@ -19,8 +19,9 @@ conflicts=('dump1090'
            'dump1090-git' 
            'dump1090_mr-git')
 
-source=('dump1090::git+https://github.com/flightaware/dump1090')
-md5sums=('SKIP')
+source=('dump1090::git+https://github.com/flightaware/dump1090'
+        'rtl-sdr.rules')
+md5sums=('SKIP' 'SKIP')
 
 install="dump1090-fa.install"
 
@@ -62,5 +63,5 @@ package() {
   cp -r ${srcdir}/dump1090/debian/lighttpd/* ${pkgdir}/etc/lighttpd/conf.d
   mkdir -p ${pkgdir}/usr/share/dump1090-fa/bladerf
   cp -r ${srcdir}/dump1090/bladerf/* ${pkgdir}/usr/share/dump1090-fa/bladerf
-
+  install -D -m644 "${srcdir}"/rtl-sdr.rules "${pkgdir}/etc/udev/rules.d/rtl-sdr.rules"
 }

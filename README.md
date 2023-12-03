@@ -16,7 +16,7 @@ bash -c "$(wget -O - https://github.com/abcd567a/archlinux-dump1090-fa/raw/maste
 ### OPTION-2: Manual Install:
 
 ```
-sudo pacman -S --needed wget git fakeroot 
+sudo pacman -S --needed git fakeroot 
 
 git clone https://github.com/abcd567a/archlinux-dump1090-fa.git   
 

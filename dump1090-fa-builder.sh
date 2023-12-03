@@ -4,9 +4,9 @@ DL_DIR=archlinux-dump1090-fa
 INST_DIR=/usr/share/dump1090-fa-builder
 USR=`whoami`
 echo ""
-echo -e "\e[1;32mInstalling Build Tools "fakeroot" (if not already installed)  \e[39m"
+echo -e "\e[1;32mInstalling Build Tools "git" and "fakeroot" (if not already installed)  \e[39m"
 sleep 3
-sudo pacman --needed -S fakeroot
+sudo pacman --needed -S git fakeroot
 
 echo ""
 echo -e "\e[1;95mCreating dedicated folder \e[39m" ${INST_DIR} "\e[39m"

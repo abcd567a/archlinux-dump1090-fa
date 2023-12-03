@@ -3,44 +3,42 @@
 ### dump1090-fa for Arch Linux & Arch Linux Arm
 
 
-## OPTION-1: Fully automated install
-
+### OPTION-1: Fully automated install:</br>The installation script creates a dedicated folder "/usr/share/dump1090-fa-builder" and all cloned code and built packages are saved in it
 Copy paste the script below in terminal and press Enter Key. The script will do everything for you, except that it will ask you provide password and your permission [yes/no] when installing packages of build tools and dependencies, and of course for installing dump1090-fa itself..
 
 ```
-git clone https://github.com/abcd567a/archlinux-dump1090-fa && bash archlinux-dump1090-fa/build-dump1090-fa.sh
+bash -c "$(wget -O - https://github.com/abcd567a/archlinux-dump1090-fa/raw/master/dump1090-fa-builder.sh)"  
 
 ```
 
-</br>
 
-## OPTION-2: Manual Method:
+
+### OPTION-2: Manual Install:
 
 ```
-sudo pacman -Sy --needed wget git binutils make gcc glibc fakeroot pkgconf rtl-sdr lighttpd bladerf
-```
-```
-sudo wget -O /etc/udev/rules.d/rtl-sdr.rules https://github.com/abcd567a/temp/raw/main/rtl-sdr.rules
-```
-```
+sudo pacman -S --needed wget git fakeroot 
+
 git clone https://github.com/abcd567a/archlinux-dump1090-fa.git   
+
+cd archlinux-dump1090-fa
+
+makepkg -si
 ```
-
-`cd archlinux-dump1090-fa  ` </br>
-
-`makepkg -si   ` </br>
 
 </br>
 
-**The cloned directory contains following three files**
+</br>
+
+**The cloned directory contains following files**
 
 - PKGBUILD
 - dump1090-fa.install
 - README.md
+- rtl-sdr.rules
+- build-dump1090-fa.sh 
 
-Give command `makepkg -si `
 
-Above command will run the PKGBUILD script which will: 
+The command `makepkg -si` will run the PKGBUILD script which will: 
 
 1. Check for conflicts with existing other versions of dump1090
 2. Offer to install dependencies rtl-sdr, lighttpd, and bladerf [Yes/no]

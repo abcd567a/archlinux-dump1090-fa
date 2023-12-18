@@ -63,5 +63,5 @@ package() {
   cp -r ${srcdir}/dump1090/debian/lighttpd/* ${pkgdir}/etc/lighttpd/conf.d
   mkdir -p ${pkgdir}/usr/share/dump1090-fa/bladerf
   cp -r ${srcdir}/dump1090/bladerf/* ${pkgdir}/usr/share/dump1090-fa/bladerf
-  install -D -m644 "${srcdir}"/rtl-sdr.rules "${pkgdir}/etc/udev/rules.d/rtl-sdr.rules"
+  install -D -m644 ${srcdir}/rtl-sdr.rules ${pkgdir}/etc/udev/rules.d/fa-rtl-sdr.rules
 }

@@ -3,6 +3,7 @@ post_install () {
 ## ENABLE DUMP1090-FA SERVICE
   systemctl enable dump1090-fa.service
   useradd --system dump1090
+  usermod -G rtlsdr dump1090
 
 ## DUMP1090-FA INTEGRATION TO LIGHTTPD
   chmod 777  /etc/lighttpd/lighttpd.conf

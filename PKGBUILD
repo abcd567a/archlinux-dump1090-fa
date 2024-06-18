@@ -34,6 +34,7 @@ build() {
   cd ${srcdir}/dump1090
   git fetch --all
   git reset --hard origin/master
+  patch -p0 -i ../../dump1090-patch
   make DUMP1090_VERSION=$(git describe --tags | sed 's/-.*//') 
 }
 

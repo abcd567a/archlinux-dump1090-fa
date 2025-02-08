@@ -16,13 +16,16 @@ echo ""
 echo -e "\e[1;95mCreating dedicated folder \e[39m" ${INST_DIR} "\e[39m"
 echo -e "\e[1;32mThis folder will hold cloned source-code and built package \e[39m"
 sleep 3
+if [[ ! -d ${INST_DIR} ]]; then
 sudo mkdir ${INST_DIR}
 sudo chown ${USR} ${INST_DIR}
+fi
 echo ""
 echo -e "\e[1;32mDownloading necessary files from Github \e[39m"
 echo ""
 sleep 3
 sudo wget -O ${INST_DIR}/PKGBUILD ${SRC_URL}/PKGBUILD
+sudo chmod 666 ${INST_DIR}/PKGBUILD
 sudo wget -O ${INST_DIR}/dump1090-fa.install ${SRC_URL}/dump1090-fa.install
 sudo wget -O ${INST_DIR}/rtl-sdr.rules ${SRC_URL}/rtl-sdr.rules
 echo ""

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DL_DIR=archlinux-dump1090-fa
+SRC_URL=https://github.com/abcd567a/archlinux-dump1090-fa/raw/master
 INST_DIR=/usr/share/dump1090-fa-assets
 USR=`whoami`
 echo ""
@@ -18,15 +18,17 @@ sleep 3
 sudo mkdir ${INST_DIR}
 sudo chown ${USR} ${INST_DIR}
 echo ""
-echo -e "\e[1;32mCloning source-code of dump1090-fa \e[39m"
+echo -e "\e[1;32mDownloading necessary files from Github \e[39m"
 echo ""
 sleep 3
-git clone https://github.com/abcd567a/${DL_DIR} ${INST_DIR}/${DL_DIR}
+sudo wget -O ${INST_DIR}/PKGBUILD ${SRC_URL}/PKGBUILD
+sudo wget -O ${INST_DIR}/dump1090-fa.install ${SRC_URL}/dump1090-fa.install
+sudo wget -O ${INST_DIR}/rtl-sdr.rules ${SRC_URL}/rtl-sdr.rules
 echo ""
 echo -e "\e[1;95mBuilding package dump1090-fa \e[39m"
 echo ""
 sleep 2
-cd ${INST_DIR}/${DL_DIR}
+cd ${INST_DIR}
 makepkg -si
 
 echo ""

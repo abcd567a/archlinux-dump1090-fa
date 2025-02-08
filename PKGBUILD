@@ -10,7 +10,7 @@ pkgrel=1
 arch=('i686' 'i386' 'x86_64' 'amd64' 'armv6h' 'armv6l' 'armv7h' 'armv7l' 'armv8h' 'armv8l' 'aarch64' 'arm64')
 license=('GPL')
 
-makedepends=('git' 'fakeroot' 'make' 'pkgconf' 'gcc')
+makedepends=('git' 'fakeroot' 'make' 'pkgconf' 'gcc' 'debugedit')
 depends=('rtl-sdr' 'lighttpd' 'bladerf')
 conflicts=('dump1090' 
            'dump1090-mutability' 
@@ -33,7 +33,8 @@ pkgver() {
 build() {
   cd ${srcdir}/dump1090
   git fetch --all
-  git reset --hard origin/master
+  ## git reset --hard origin/master
+  git reset --hard origin/dev
   make DUMP1090_VERSION=$(git describe --tags | sed 's/-.*//') 
 }
 

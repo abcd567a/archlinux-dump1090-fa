@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DL_DIR=archlinux-dump1090-fa
-INST_DIR=/usr/share/dump1090-fa-builder
+INST_DIR=/usr/share/dump1090-fa-assets
 USR=`whoami`
 echo ""
 echo -e "\e[1;32mInstalling (if not already installed) following Build Tools \e[39m"

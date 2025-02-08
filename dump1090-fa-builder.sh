@@ -16,10 +16,15 @@ echo ""
 echo -e "\e[1;95mCreating dedicated folder \e[39m" ${INST_DIR} "\e[39m"
 echo -e "\e[1;32mThis folder will hold cloned source-code and built package \e[39m"
 sleep 3
-if [[ ! -d ${INST_DIR} ]]; then
+
+if [[ -d ${INST_DIR} ]]; then
+   echo -e "\e[32mRenaming existing folder" \"${INST_DIR}\" "by adding prefix \"old\" \e[39m"
+   sudo mv ${INST_DIR} ${INST_DIR}-old-$RANDOM
+fi
+
 sudo mkdir ${INST_DIR}
 sudo chown ${USR} ${INST_DIR}
-fi
+
 echo ""
 echo -e "\e[1;32mDownloading necessary files from Github \e[39m"
 echo ""

@@ -2,7 +2,7 @@
 set -e
 
 SRC_URL=https://github.com/abcd567a/archlinux-dump1090-fa/raw/master
-INST_DIR=/usr/share/dump1090-fa-assets
+INST_DIR=/usr/share/dump1090-fa-builder
 USR=`whoami`
 echo ""
 echo -e "\e[1;95mIf NOT already installed, \e[1;32mthen will install following Build Tools: \e[39m"

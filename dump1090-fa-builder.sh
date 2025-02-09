@@ -5,7 +5,7 @@ SRC_URL=https://github.com/abcd567a/archlinux-dump1090-fa/raw/master
 INST_DIR=/usr/share/dump1090-fa-assets
 USR=`whoami`
 echo ""
-echo -e "\e[1;32mInstalling (if not already installed) following Build Tools \e[39m"
+echo -e "\e[1;95mIf NOT already installed, \e[1;32mthen will install following Build Tools: \e[39m"
 echo ""
 echo -e "\e[1;95m    git fakeroot make pkgconf gcc debugedit \e[39m"
 echo ""
@@ -38,7 +38,7 @@ echo -e "\e[1;95mBuilding package dump1090-fa \e[39m"
 echo ""
 sleep 2
 cd ${INST_DIR}
-makepkg -si
+makepkg -si OPTIONS=-debug
 
 echo ""
 echo ""
